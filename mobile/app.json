@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "name": "YeeBuddy",
+    "slug": "yeebuddy",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "splash": { "backgroundColor": "#F6F0E6" },
+    "android": { "package": "com.yeebuddy.app" },
+    "ios": { "bundleIdentifier": "com.yeebuddy.app" }
+  }
+}
