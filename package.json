@@ -1,0 +1,11 @@
+{
+  "name": "yeebuddy",
+  "private": true,
+  "workspaces": ["mobile", "server"],
+  "scripts": {
+    "install:all": "npm install --workspaces",
+    "start": "npm --workspace mobile start",
+    "server": "npm --workspace server start",
+    "test": "npm --workspace server test"
+  }
+}
