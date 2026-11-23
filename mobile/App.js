@@ -35,7 +35,8 @@ function Page({ title, subtitle, children, theme, onProfile }) {
 function LoadState({ loading, error, empty, onRetry, theme, children }) {
   if (loading) return <View style={styles.center}><ActivityIndicator color={theme.accent} /><Text style={[styles.muted, { color: theme.textSecondary }]}>Loading your journal…</Text></View>;
   if (error) return <View style={styles.center}><Text style={[styles.error, { color: theme.danger }]}>{error}</Text><Button theme={theme} tone="plain" small onPress={onRetry}>Try again</Button></View>;
-  if (empty) return <View style={styles.center}><Text style={[styles.muted, { color: theme.textSecondary }]}>{empty}</Text></View>;
+  const isEmpty = !children || (Array.isArray(children.props?.data) && children.props.data.length === 0);
+  if (empty && isEmpty) return <View style={styles.center}><Text style={[styles.muted, { color: theme.textSecondary }]}>{empty}</Text></View>;
   return children;
 }
 function Chips({ options, selected, onSelect, theme }) { return <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chips}>{options.map((item) => <Pressable key={item} onPress={() => onSelect(item)} style={[styles.chip, { borderColor: theme.border, backgroundColor: selected === item ? theme.secondary : theme.surface }]}><Text style={{ color: theme.textPrimary }}>{item}</Text></Pressable>)}</ScrollView>; }
