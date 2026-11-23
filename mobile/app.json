@@ -5,8 +5,20 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
-    "splash": { "backgroundColor": "#F6F0E6" },
-    "android": { "package": "com.yeebuddy.app" },
-    "ios": { "bundleIdentifier": "com.yeebuddy.app" }
+    "android": {
+      "package": "com.yeebuddy.app"
+    },
+    "ios": {
+      "bundleIdentifier": "com.yeebuddy.app"
+    },
+    "plugins": [
+      "expo-status-bar",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#F6F0E6"
+        }
+      ]
+    ]
   }
 }
